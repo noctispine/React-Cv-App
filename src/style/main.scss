@@ -1,0 +1,33 @@
+@use 'reset';
+@use 'cv-form';
+@use 'variables';
+
+.cv-form {
+
+    border: 1px solid black;
+    width: 40%;
+    
+
+    .personal-form {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        
+    }
+
+    .education-form div {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-top: 3rem;
+
+        input[name="school"] {
+            flex: 0 0 20%;
+        }
+
+        input[name="degree"] {
+            flex: 0 0 20%;
+        }
+    }
+}
+

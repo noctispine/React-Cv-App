@@ -9,10 +9,22 @@ const emptyCv = {
     summary: "",
   },
 
-  educationInfo: {
-    school: "",
-    degree: "",
-  },
+  educationInfo: [
+    {
+      id: uniqid(),
+      school: "",
+      degree: "",
+    },
+  ],
+
+  experience: [
+    {
+      id: uniqid(),
+      company: "",
+      role: "",
+      description: "",
+    },
+  ],
 };
 
 export default emptyCv;
