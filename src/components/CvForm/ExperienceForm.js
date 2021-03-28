@@ -3,7 +3,6 @@ import React from "react";
 const ExperienceForm = ({ experience, onChange, handleAdd, handleDelete }) => {
   const experienceItems = experience.map((item) => (
     <div key={item.id} id={item.id}>
-      <h3>Experience</h3>
       <input
         onChange={(e) => onChange(e, item.id)}
         type="text"
@@ -23,6 +22,8 @@ const ExperienceForm = ({ experience, onChange, handleAdd, handleDelete }) => {
         name="description"
         value={item.description}
         placeholder="Description"
+        cols="50"
+        rows="8"
       ></textarea>
 
       <button onClick={handleAdd}>Add</button>
@@ -30,7 +31,12 @@ const ExperienceForm = ({ experience, onChange, handleAdd, handleDelete }) => {
     </div>
   ));
 
-  return <div className="experience-form">{experienceItems}</div>;
+  return (
+    <div className="experience-form">
+      <h3>Experience</h3>
+      {experienceItems}
+    </div>
+  );
 };
 
 export default ExperienceForm;

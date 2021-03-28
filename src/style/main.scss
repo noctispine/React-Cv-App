@@ -1,33 +1,96 @@
 @use 'reset';
 @use 'cv-form';
-@use 'variables';
 
-.cv-form {
+$primary-color: #536dfe;
+$primary-light: #8f9bff;
+$primary-dark: #0043ca;
 
-    border: 1px solid black;
-    width: 40%;
-    
-
-    .personal-form {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        
-    }
-
-    .education-form div {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        margin-top: 3rem;
-
-        input[name="school"] {
-            flex: 0 0 20%;
-        }
-
-        input[name="degree"] {
-            flex: 0 0 20%;
-        }
-    }
+#root {
+  display: flex;
+  justify-content: space-around;
 }
 
+.cv-prev {
+  border: 5px solid black;
+  width: 40%;
+  display: grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Personal Education Education"
+    "Personal Experience Experience"
+    "Personal Experience Experience"
+    "Personal Experience Experience"
+    "Personal Experience Experience";
+
+  .personal-prev {
+    background-color: $primary-light;
+    grid-area: Personal;
+
+    > * {
+      margin: 2rem;
+    }
+
+    .first-last-name {
+      text-align: center;
+    }
+
+    .summary-header::after {
+      display: block;
+      content: "";
+      border-bottom: 0.2rem solid black;
+      width: 50%;
+      margin: 0.5rem 0.5rem;
+    }
+
+    .summary {
+      width: 34ch;
+    }
+  }
+
+  .education {
+    grid-area: Education;
+    box-sizing: border-box;
+    border-left: 2px solid black;
+    > * {
+      margin: 2rem;
+    }
+  }
+
+  .experience {
+    grid-area: Experience;
+    box-sizing: border-box;
+
+    > * {
+      margin: 2rem;
+    }
+  }
+}
+
+.cv-form {
+  border: 5px solid black;
+  text-align: center;
+  width: 40%;
+  background-color: chocolate;
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      input {
+        height: 2rem;
+        :focus {
+          border: none;
+        }
+      }
+      > * {
+        margin-top: 0.5rem;
+        width: 70%;
+        align-self: center;
+      }
+    }
+  }
+}

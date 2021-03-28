@@ -3,7 +3,6 @@ import React from "react";
 const EducationForm = ({ education, onChange, handleAdd, handleDelete }) => {
   const educationItems = education.map((item) => (
     <div key={item.id} id={item.id}>
-      <h3>Education</h3>
       <input
         onChange={(e) => onChange(e, item.id)}
         type="text"
@@ -24,7 +23,13 @@ const EducationForm = ({ education, onChange, handleAdd, handleDelete }) => {
       <button onClick={(id) => handleDelete(item.id)}>Delete</button>
     </div>
   ));
-  return <div className="education-form">{educationItems}</div>;
+
+  return (
+    <div className="education-form">
+      <h3 id="education">Education</h3>
+      {educationItems}
+    </div>
+  );
 };
 
 export default EducationForm;

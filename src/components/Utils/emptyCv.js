@@ -12,6 +12,7 @@ const emptyCv = {
   educationInfo: [
     {
       id: uniqid(),
+      //
       school: "",
       degree: "",
     },

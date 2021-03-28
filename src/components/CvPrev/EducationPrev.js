@@ -2,12 +2,17 @@ import React from "react";
 
 const EducationPrev = ({ education }) => {
   const educationPrevItems = education.map((item) => (
-    <>
-      <h3>{item.school}</h3>
-      <h7>{item.degree}</h7>
-    </>
+    <li key={item.id}>
+      <h3 className="school">{item.school}</h3>
+      <h5 className="degree">Degree: {item.degree}</h5>
+    </li>
   ));
-  return <div className="education-prev">{educationPrevItems}</div>;
+  return (
+    <div className="education prev">
+      <h2>Education</h2>
+      <ul>{educationPrevItems}</ul>
+    </div>
+  );
 };
 
 export default EducationPrev;
