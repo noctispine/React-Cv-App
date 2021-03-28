@@ -12,7 +12,8 @@ $primary-dark: #0043ca;
 
 .cv-prev {
   border: 5px solid black;
-  width: 40%;
+  width: 210mm;
+  height: 297mm;
   display: grid;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -73,23 +74,37 @@ $primary-dark: #0043ca;
   border: 5px solid black;
   text-align: center;
   width: 40%;
-  background-color: chocolate;
+  background-color: #a4a4a4;
 
   div {
     display: flex;
     flex-direction: column;
+    margin-top: 1.2rem;
 
     > * {
       input {
         height: 2rem;
-        :focus {
-          border: none;
-        }
+        border: 1px solid transparent;
+        border-radius: 5px;
       }
+
+      input:focus {
+        outline: none;
+      }
+
+      textarea:focus {
+        outline: none;
+      }
+
+
+
       > * {
         margin-top: 0.5rem;
         width: 70%;
         align-self: center;
+      }
+
+      button {
       }
     }
   }

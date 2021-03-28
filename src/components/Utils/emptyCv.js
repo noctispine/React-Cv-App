@@ -6,6 +6,8 @@ const emptyCv = {
     lastName: "",
     title: "",
     email: "",
+    phone: "",
+    location: "",
     summary: "",
   },
 

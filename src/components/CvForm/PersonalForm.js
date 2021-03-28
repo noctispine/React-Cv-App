@@ -35,6 +35,20 @@ const PersonalForm = ({ personal, onChange }) => {
         />
         <input
           onChange={onChange}
+          type="text"
+          name="phone"
+          placeholder="Phone"
+          value={personal.phone}
+        />
+        <input
+          onChange={onChange}
+          type="text"
+          name="location"
+          placeholder="Location"
+          value={personal.location}
+        />
+        <input
+          onChange={onChange}
           type="email"
           name="summary"
           placeholder="Summary"
