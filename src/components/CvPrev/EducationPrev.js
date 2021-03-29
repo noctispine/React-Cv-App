@@ -9,7 +9,7 @@ const EducationPrev = ({ education }) => {
   ));
   return (
     <div className="education prev">
-      <h2>Education</h2>
+      <h2 className="education-header">Education</h2>
       <ul>{educationPrevItems}</ul>
     </div>
   );

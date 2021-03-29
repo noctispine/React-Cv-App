@@ -7,13 +7,13 @@ const PersonalPrev = ({ personal }) => {
         {personal.firstName} {personal.lastName}
       </h1>
       <h4 className="title">{personal.title}</h4>
-      <h4 className="email">
+      <h4 className="personal-info email">
         <i class="far fa-envelope"></i> {personal.email}
       </h4>
-      <h4 className="phone">
+      <h4 className="personal-info phone">
         <i class="fas fa-phone-square-alt"></i> {personal.phone}
       </h4>
-      <h4 className="phone">
+      <h4 className="personal-info location">
         <i class="fas fa-map-marker-alt"></i> {personal.location}
       </h4>
       <h2 className="summary-header">Summary</h2>

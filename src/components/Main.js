@@ -3,6 +3,7 @@ import emptyCv from "./Utils/emptyCv";
 import CvForm from "./CvForm/CvForm";
 import CvPrev from "./CvPrev/cvPrev";
 import uniqid from "uniqid";
+import exampleCv from "./Utils/exampleCv"
 
 const Main = () => {
   const [cv, setCv] = useState(emptyCv);
@@ -81,6 +82,10 @@ const Main = () => {
     });
   };
 
+  const loadExample = () => {
+    setCv(exampleCv);
+  } 
+
   return (
     <>
       <CvForm
@@ -92,6 +97,7 @@ const Main = () => {
         handleChangeExperience={handleChangeExperience}
         handleAddExperience = {handleAddExperience}
         handleDeleteExperience = {handleDeleteExperience}
+        handleLoadExample = {loadExample}
       />
       <CvPrev cv={cv} />
     </>

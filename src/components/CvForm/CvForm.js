@@ -18,6 +18,7 @@ const CvForm = ({
   handleChangeExperience,
   handleAddExperience,
   handleDeleteExperience,
+  handleLoadExample,
 }) => {
   return (
     <div className="cv-form">
@@ -34,6 +35,9 @@ const CvForm = ({
         handleAdd={handleAddExperience}
         handleDelete={handleDeleteExperience}
       />
+      <button className="loadExample" onClick={handleLoadExample}>
+        Load Example CV
+      </button>
     </div>
   );
 };
