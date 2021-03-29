@@ -4,6 +4,7 @@
 $primary-color: #536dfe;
 $primary-light: #8f9bff;
 $primary-dark: #0043ca;
+$roboto: "Roboto", sans-serif;
 
 #root {
   display: flex;
@@ -15,57 +16,83 @@ $primary-dark: #0043ca;
   width: 210mm;
   height: 297mm;
   display: grid;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 105mm 105mm;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "Personal Education Education"
-    "Personal Experience Experience"
-    "Personal Experience Experience"
-    "Personal Experience Experience"
-    "Personal Experience Experience";
+    "Personal Education"
+    "Personal Education"
+    "Personal Experience"
+    "Personal Experience"
+    "Personal Experience";
+}
 
-  .personal-prev {
-    background-color: $primary-light;
-    grid-area: Personal;
+.personal-prev {
+  background-color: $primary-light;
+  grid-area: Personal;
 
-    > * {
-      margin: 2rem;
-    }
-
-    .first-last-name {
-      text-align: center;
-    }
-
-    .summary-header::after {
-      display: block;
-      content: "";
-      border-bottom: 0.2rem solid black;
-      width: 50%;
-      margin: 0.5rem 0.5rem;
-    }
-
-    .summary {
-      width: 34ch;
-    }
+  .first-last-name {
+    text-align: center;
+    font-family: $roboto;
+    letter-spacing: 2px;
+    margin-top: 30mm;
   }
 
-  .education {
-    grid-area: Education;
-    box-sizing: border-box;
-    border-left: 2px solid black;
-    > * {
-      margin: 2rem;
-    }
+  .personal-info {
+    text-align: center;
   }
 
-  .experience {
-    grid-area: Experience;
-    box-sizing: border-box;
+  .summary-header {
+    margin-left: 5mm;
+  }
 
-    > * {
-      margin: 2rem;
+  .summary-header::after {
+    display: block;
+    content: "";
+    border-bottom: 0.2rem solid black;
+    width: 50%;
+    margin: 0.5rem 0.5rem;
+  }
+
+  .title {
+    margin-left: 20mm;
+    font-size: 20px;
+  }
+
+  .summary {
+    margin-left: 10mm;
+    margin-right: 10mm;
+    overflow: hidden;
+
+    width: 45ch;
+  }
+}
+
+.education {
+  grid-area: Education;
+  box-sizing: border-box;
+  border-left: 2px solid black;
+  ul {
+    margin-left: 12mm;
+    letter-spacing: 0.5px;
+  }
+
+  .education-header {
+    margin-top: 30mm;
+    margin-left: 15mm;
+  }
+}
+
+.experience {
+  grid-area: Experience;
+  box-sizing: border-box;
+  margin-left: 10mm;
+
+
+  ul {
+    li {
+      margin-top: 10mm;
+
     }
   }
 }
@@ -95,8 +122,6 @@ $primary-dark: #0043ca;
       textarea:focus {
         outline: none;
       }
-
-
 
       > * {
         margin-top: 0.5rem;
