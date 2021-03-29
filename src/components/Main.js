@@ -3,7 +3,7 @@ import emptyCv from "./Utils/emptyCv";
 import CvForm from "./CvForm/CvForm";
 import CvPrev from "./CvPrev/cvPrev";
 import uniqid from "uniqid";
-import exampleCv from "./Utils/exampleCv"
+import exampleCv from "./Utils/exampleCv";
 
 const Main = () => {
   const [cv, setCv] = useState(emptyCv);
@@ -38,7 +38,6 @@ const Main = () => {
       ],
     });
   };
-
 
   // Handle Education
 
@@ -77,14 +76,47 @@ const Main = () => {
 
   const handleDeleteExperience = (id) => {
     setCv(() => {
-      const newExperience =  cv.experience.filter((item) => item.id !== id);
+      const newExperience = cv.experience.filter((item) => item.id !== id);
       setCv({ ...cv, experience: [...newExperience] });
     });
   };
 
   const loadExample = () => {
     setCv(exampleCv);
-  } 
+  };
+
+  const handleChangeSkill = (e, id) => {
+    const { name, value } = e.target;
+
+    setCv(() => {
+      const newSkill = cv.skill.map((item) => {
+        if (item.id === id) return { ...cv.skill, [name]: value };
+        return item;
+      });
+      return { ...cv, skill: [...newSkill] };
+    });
+  };
+
+  const handleAddSkill = () => {
+    setCv({
+      ...cv,
+      skill: [
+        ...cv.skill,
+        {
+          id: uniqid(),
+          title: "",
+          skills: [],
+        },
+      ],
+    });
+  };
+
+  const handleDeleteSkill = (id) => {
+    setCv(() => {
+      const newSkill = cv.skill.filter((item) => item.id !== id);
+      return { ...cv, skill: [...newSkill] };
+    });
+  };
 
   return (
     <>
@@ -95,9 +127,12 @@ const Main = () => {
         handleAddEducation={handleAddEducation}
         handleDeleteEducation={handleDeleteEducation}
         handleChangeExperience={handleChangeExperience}
-        handleAddExperience = {handleAddExperience}
-        handleDeleteExperience = {handleDeleteExperience}
-        handleLoadExample = {loadExample}
+        handleAddExperience={handleAddExperience}
+        handleDeleteExperience={handleDeleteExperience}
+        handleLoadExample={loadExample}
+        handleChangeSkill={handleChangeSkill}
+        handleAddSkill={handleAddSkill}
+        handleDeleteSkill={handleDeleteSkill}
       />
       <CvPrev cv={cv} />
     </>

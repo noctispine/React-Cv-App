@@ -2,6 +2,7 @@ import React from "react";
 import PersonalForm from "./PersonalForm";
 import EducationForm from "./EducationForm";
 import ExperienceForm from "./ExperienceForm";
+import SkillForm from "./SkillForm";
 
 const CvForm = ({
   // handle Personal
@@ -19,10 +20,21 @@ const CvForm = ({
   handleAddExperience,
   handleDeleteExperience,
   handleLoadExample,
+
+  //skill
+  handleChangeSkill,
+  handleAddSkill,
+  handleDeleteSkill,
 }) => {
   return (
     <div className="cv-form">
       <PersonalForm personal={cv.personal} onChange={onChangePersonal} />
+      <SkillForm
+        skill={cv.skill}
+        onChange={handleChangeSkill}
+        handleAdd={handleAddSkill}
+        handleDelete={handleDeleteSkill}
+      />
       <EducationForm
         education={cv.educationInfo}
         onChange={handleChangeEducation}
