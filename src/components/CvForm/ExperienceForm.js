@@ -26,8 +26,8 @@ const ExperienceForm = ({ experience, onChange, handleAdd, handleDelete }) => {
         rows="8"
       ></textarea>
 
-      <button onClick={handleAdd}>Add</button>
-      <button onClick={(id) => handleDelete(item.id)}>Delete</button>
+      <button className="add" onClick={handleAdd}>Add</button>
+      <button className="delete" onClick={(id) => handleDelete(item.id)}>Delete</button>
     </div>
   ));
 

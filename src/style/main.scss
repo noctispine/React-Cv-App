@@ -1,18 +1,27 @@
 @use 'reset';
 @use 'cv-form';
 
-$primary-color: #536dfe;
-$primary-light: #8f9bff;
-$primary-dark: #0043ca;
+$primary-color: #1a3140;
+$font-pink: #d2bfb7;
 $roboto: "Roboto", sans-serif;
+$btn-red: #d50000;
+$btn-green: #00c853;
+$btn-orange: #ffab00;
 
 #root {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+html {
+  background-color: wheat;
 }
 
 .cv-prev {
   border: 5px solid black;
+  position: sticky;
+  background-color: white;
   width: 210mm;
   height: 297mm;
   display: grid;
@@ -28,14 +37,20 @@ $roboto: "Roboto", sans-serif;
 }
 
 .personal-prev {
-  background-color: $primary-light;
+  background-color: $primary-color;
   grid-area: Personal;
+  color: white;
 
   .first-last-name {
     text-align: center;
     font-family: $roboto;
     letter-spacing: 2px;
     margin-top: 30mm;
+    color: $font-pink;
+  }
+
+  .title {
+    color: $font-pink;
   }
 
   .personal-info {
@@ -43,15 +58,9 @@ $roboto: "Roboto", sans-serif;
   }
 
   .summary-header {
-    margin-left: 5mm;
-  }
-
-  .summary-header::after {
-    display: block;
-    content: "";
-    border-bottom: 0.2rem solid black;
-    width: 50%;
-    margin: 0.5rem 0.5rem;
+    margin-top: 25mm;
+    margin-left: 15mm;
+    color: $font-pink;
   }
 
   .title {
@@ -60,11 +69,11 @@ $roboto: "Roboto", sans-serif;
   }
 
   .summary {
-    margin-left: 10mm;
+    margin-left: 15mm;
     margin-right: 10mm;
     overflow: hidden;
-
-    width: 45ch;
+    width: 35ch;
+    font-size: 19px;
   }
 }
 
@@ -88,11 +97,9 @@ $roboto: "Roboto", sans-serif;
   box-sizing: border-box;
   margin-left: 10mm;
 
-
   ul {
     li {
       margin-top: 10mm;
-
     }
   }
 }
@@ -100,8 +107,8 @@ $roboto: "Roboto", sans-serif;
 .cv-form {
   border: 5px solid black;
   text-align: center;
-  width: 40%;
-  background-color: #a4a4a4;
+  width: 210mm;
+  background-color: $primary-color;
 
   div {
     display: flex;
@@ -109,6 +116,7 @@ $roboto: "Roboto", sans-serif;
     margin-top: 1.2rem;
 
     > * {
+      color: $font-pink;
       input {
         height: 2rem;
         border: 1px solid transparent;
@@ -130,7 +138,63 @@ $roboto: "Roboto", sans-serif;
       }
 
       button {
+        cursor: pointer;
+        height: 2.5rem;
+      }
+      .add {
+        background-color: $btn-green;
+        color: white;
+        font-weight: bold;
+      }
+      .delete {
+        background-color: $btn-red;
+        color: white;
+        font-weight: bold;
       }
     }
   }
+
+  .loadExample {
+    width: 70%;
+    margin-top: 3rem;
+    height: 2.5rem;
+    background-color: $btn-orange;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  .print {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    width: 70%;
+    height: 2.5rem;
+    background-color: $btn-orange;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+// lines
+.experience-header::after,
+.education-header::after {
+  display: block;
+  content: "";
+  border-bottom: 0.2rem solid black;
+  width: 50%;
+  margin: 0.5rem 0;
+}
+.summary-header::after {
+  display: block;
+  content: "";
+  border-bottom: 0.2rem solid $font-pink;
+  width: 50%;
+  margin: 0.5rem 0;
+}
+
+.education-header .school .degree .experience-header .company .description {
+  color: $primary-color;
 }

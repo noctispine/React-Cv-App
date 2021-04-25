@@ -11,7 +11,7 @@ const ExperiencePrev = ({ experience }) => {
   ));
   return (
     <div className="experience prev">
-        <h2>Experience</h2>
+        <h2 className="experience-header">Experience</h2>
       <ul>{experienceItems}</ul>
     </div>
   );

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import emptyCv from "./Utils/emptyCv";
 import CvForm from "./CvForm/CvForm";
 import CvPrev from "./CvPrev/cvPrev";
 import uniqid from "uniqid";
 import exampleCv from "./Utils/exampleCv";
+import { useReactToPrint } from "react-to-print";
 
 const Main = () => {
   const [cv, setCv] = useState(emptyCv);
@@ -85,38 +86,8 @@ const Main = () => {
     setCv(exampleCv);
   };
 
-  const handleChangeSkill = (e, id) => {
-    const { name, value } = e.target;
-
-    setCv(() => {
-      const newSkill = cv.skill.map((item) => {
-        if (item.id === id) return { ...cv.skill, [name]: value };
-        return item;
-      });
-      return { ...cv, skill: [...newSkill] };
-    });
-  };
-
-  const handleAddSkill = () => {
-    setCv({
-      ...cv,
-      skill: [
-        ...cv.skill,
-        {
-          id: uniqid(),
-          title: "",
-          skills: [],
-        },
-      ],
-    });
-  };
-
-  const handleDeleteSkill = (id) => {
-    setCv(() => {
-      const newSkill = cv.skill.filter((item) => item.id !== id);
-      return { ...cv, skill: [...newSkill] };
-    });
-  };
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({ content: () => componentRef.current });
 
   return (
     <>
@@ -130,11 +101,9 @@ const Main = () => {
         handleAddExperience={handleAddExperience}
         handleDeleteExperience={handleDeleteExperience}
         handleLoadExample={loadExample}
-        handleChangeSkill={handleChangeSkill}
-        handleAddSkill={handleAddSkill}
-        handleDeleteSkill={handleDeleteSkill}
+        onPrint={handlePrint}
       />
-      <CvPrev cv={cv} />
+      <CvPrev cv={cv} ref={componentRef} />
     </>
   );
 };
