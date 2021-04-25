@@ -28,14 +28,6 @@ const emptyCv = {
       description: "",
     },
   ],
-
-  skill: [
-    {
-      id: uniqid(),
-      title: "",
-      skills: [],
-    },
-  ],
 };
 
 export default emptyCv;

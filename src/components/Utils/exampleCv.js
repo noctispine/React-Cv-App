@@ -4,12 +4,12 @@ const exampleCv = {
   personal: {
     firstName: "Lorem.",
     lastName: "Ipsum.",
-    title: "Lorem Ipsum", 
+    title: "Lorem Ipsum",
     email: "lorem@ipsum.com",
     phone: "630-234-12-16",
     location: "Random, Place",
     summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis error neque alias iusto excepturi mollitia sint, quia, cum laboriosam nemo blanditiis deserunt consectetur voluptatum a commodi possimus esse repellat doloremque inventore rerum? Veritatis eligendi ipsam nihil perferendis cupiditate ipsa eveniet nemo distinctio labore. Soluta est numquam aperiam cumque assumenda maxime. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat obcaecati quia molestias error, maiores est voluptatibus aliquid incidunt distinctio dolores pariatur ratione! Dolorum rem consequatur autem ipsum distinctio quaerat numquam.",
+      "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quia magni reprehenderit optio labore facilis sint mollitia repudiandae ut necessitatibus.",
   },
 
   educationInfo: [
