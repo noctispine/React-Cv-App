@@ -198,3 +198,10 @@ html {
 .education-header .school .degree .experience-header .company .description {
   color: $primary-color;
 }
+
+
+@media only screen and (max-width: 1638px) {
+  body {
+    margin-top: 2rem;
+  }
+}
